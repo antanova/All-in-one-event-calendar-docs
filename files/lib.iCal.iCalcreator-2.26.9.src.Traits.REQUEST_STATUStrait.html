@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+        <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function(){
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Kigkonsult.html">\Kigkonsult</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">1499</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">13</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-562211487"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-562211487" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-936342375"></a>
+                                <a href="../namespaces/Kigkonsult.html" style="margin-left: 30px; padding-left: 0">Kigkonsult</a>
+            </div>
+            <div id="namespace-936342375" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1234022435"></a>
+                                <a href="../namespaces/Kigkonsult.Icalcreator.html" style="margin-left: 30px; padding-left: 0">Icalcreator</a>
+            </div>
+            <div id="namespace-1234022435" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-639425962"></a>
+                                <a href="../namespaces/Kigkonsult.Icalcreator.Traits.html" style="margin-left: 30px; padding-left: 0">Traits</a>
+            </div>
+            <div id="namespace-639425962" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.ACTIONtrait.html">ACTIONtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.ATTACHtrait.html">ATTACHtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.ATTENDEEtrait.html">ATTENDEEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.CALSCALEtrait.html">CALSCALEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.CATEGORIEStrait.html">CATEGORIEStrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.CLASStrait.html">CLASStrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.COMMENTtrait.html">COMMENTtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.COMPLETEDtrait.html">COMPLETEDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.CONTACTtrait.html">CONTACTtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.CREATEDtrait.html">CREATEDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.DESCRIPTIONtrait.html">DESCRIPTIONtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.DTENDtrait.html">DTENDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.DTSTAMPtrait.html">DTSTAMPtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.DTSTARTtrait.html">DTSTARTtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.DUEtrait.html">DUEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.DURATIONtrait.html">DURATIONtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.EXDATEtrait.html">EXDATEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.EXRULEtrait.html">EXRULEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.FREEBUSYtrait.html">FREEBUSYtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.GEOtrait.html">GEOtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.LAST_MODIFIEDtrait.html">LAST_MODIFIEDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.LOCATIONtrait.html">LOCATIONtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.METHODtrait.html">METHODtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.ORGANIZERtrait.html">ORGANIZERtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.PERCENT_COMPLETEtrait.html">PERCENT_COMPLETEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.PRIORITYtrait.html">PRIORITYtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.PRODIDtrait.html">PRODIDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.RDATEtrait.html">RDATEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.RECURRENCE_IDtrait.html">RECURRENCE_IDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.RELATED_TOtrait.html">RELATED_TOtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.REPEATtrait.html">REPEATtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.REQUEST_STATUStrait.html">REQUEST_STATUStrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.RESOURCEStrait.html">RESOURCEStrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.RRULEtrait.html">RRULEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.SEQUENCEtrait.html">SEQUENCEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.STATUStrait.html">STATUStrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.SUMMARYtrait.html">SUMMARYtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TRANSPtrait.html">TRANSPtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TRIGGERtrait.html">TRIGGERtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TZIDtrait.html">TZIDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TZNAMEtrait.html">TZNAMEtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TZOFFSETFROMtrait.html">TZOFFSETFROMtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TZOFFSETTOtrait.html">TZOFFSETTOtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.TZURLtrait.html">TZURLtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.UIDtrait.html">UIDtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.URLtrait.html">URLtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.VERSIONtrait.html">VERSIONtrait</a></li>
+                                                    <li class="trait"><a href="../classes/Kigkonsult.Icalcreator.Traits.X_PROPtrait.html">X_PROPtrait</a></li>
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1066914228"></a>
+                                <a href="../namespaces/Kigkonsult.Icalcreator.Util.html" style="margin-left: 30px; padding-left: 0">Util</a>
+            </div>
+            <div id="namespace-1066914228" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.IcaldateTime.html">IcaldateTime</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.Util.html">Util</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilAttendee.html">UtilAttendee</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilDuration.html">UtilDuration</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilGeo.html">UtilGeo</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilRecur.html">UtilRecur</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilRedirect.html">UtilRedirect</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilRexdate.html">UtilRexdate</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.UtilSelect.html">UtilSelect</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Util.VcalendarSortHandler.html">VcalendarSortHandler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Kigkonsult.Icalcreator.IcalInterface.html">IcalInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.CalendarComponent.html">CalendarComponent</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.IcalBase.html">IcalBase</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.IcalvCard.html">IcalvCard</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.IcalXML.html">IcalXML</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.TimezoneHandler.html">TimezoneHandler</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Valarm.html">Valarm</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Vcalendar.html">Vcalendar</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Vevent.html">Vevent</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Vfreebusy.html">Vfreebusy</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Vjournal.html">Vjournal</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Vtimezone.html">Vtimezone</a></li>
+                                                    <li class="class"><a href="../classes/Kigkonsult.Icalcreator.Vtodo.html">Vtodo</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Adapter_Query_Interface.html">Ai1ec_Adapter_Query_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Filter_Interface.html">Ai1ec_Filter_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Html_Element_Interface.html">Ai1ec_Html_Element_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Import_Export_Engine.html">Ai1ec_Import_Export_Engine</a></li>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Import_Export_Service_Engine.html">Ai1ec_Import_Export_Service_Engine</a></li>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Registry.html">Ai1ec_Registry</a></li>
+                                                    <li class="interface"><a href="../classes/Ai1ec_Renderable.html">Ai1ec_Renderable</a></li>
+                                                                                                    <li class="class"><a href="../classes/Ai1ec_Abstract_Query.html">Ai1ec_Abstract_Query</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Acl_Aco.html">Ai1ec_Acl_Aco</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Adapter_Query_Wordpress.html">Ai1ec_Adapter_Query_Wordpress</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Abstract.html">Ai1ec_Api_Abstract</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Features.html">Ai1ec_Api_Features</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Feeds.html">Ai1ec_Api_Feeds</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Ics_Import_Export_Engine.html">Ai1ec_Api_Ics_Import_Export_Engine</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Registration.html">Ai1ec_Api_Registration</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Settings.html">Ai1ec_Api_Settings</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Api_Ticketing.html">Ai1ec_Api_Ticketing</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_App.html">Ai1ec_App</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Base.html">Ai1ec_Base</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Base_Extension_Controller.html">Ai1ec_Base_Extension_Controller</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Base_License_Controller.html">Ai1ec_Base_License_Controller</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Bootstrap_Exception.html">Ai1ec_Bootstrap_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Bootstrap_Modal.html">Ai1ec_Bootstrap_Modal</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_Avatar_Fallbacks.html">Ai1ec_Calendar_Avatar_Fallbacks</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_Page.html">Ai1ec_Calendar_Page</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_State.html">Ai1ec_Calendar_State</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_Updates.html">Ai1ec_Calendar_Updates</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_View_Abstract.html">Ai1ec_Calendar_View_Abstract</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_View_Agenda.html">Ai1ec_Calendar_View_Agenda</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_View_Month.html">Ai1ec_Calendar_View_Month</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_View_Oneday.html">Ai1ec_Calendar_View_Oneday</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Calendar_View_Week.html">Ai1ec_Calendar_View_Week</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Captcha_Nocaptcha_Provider.html">Ai1ec_Captcha_Nocaptcha_Provider</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Captcha_Provider.html">Ai1ec_Captcha_Provider</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Captcha_Providers.html">Ai1ec_Captcha_Providers</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Captcha_Recaptcha_Provider.html">Ai1ec_Captcha_Recaptcha_Provider</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Clone_Renderer_Helper.html">Ai1ec_Clone_Renderer_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command.html">Ai1ec_Command</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Api_Ticketing_Signup.html">Ai1ec_Command_Api_Ticketing_Signup</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Change_Theme.html">Ai1ec_Command_Change_Theme</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Check_Updates.html">Ai1ec_Command_Check_Updates</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Clone.html">Ai1ec_Command_Clone</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Compile_Core_Css.html">Ai1ec_Command_Compile_Core_Css</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Compile_Themes.html">Ai1ec_Command_Compile_Themes</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Disable_Gzip.html">Ai1ec_Command_Disable_Gzip</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Export_Events.html">Ai1ec_Command_Export_Events</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Render_Calendar.html">Ai1ec_Command_Render_Calendar</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Render_Event.html">Ai1ec_Command_Render_Event</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Resolver.html">Ai1ec_Command_Resolver</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Save_Abstract.html">Ai1ec_Command_Save_Abstract</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Save_Settings.html">Ai1ec_Command_Save_Settings</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Command_Save_Theme_Options.html">Ai1ec_Command_Save_Theme_Options</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Compatibility_Check.html">Ai1ec_Compatibility_Check</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Compatibility_Cli.html">Ai1ec_Compatibility_Cli</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Compatibility_Memory.html">Ai1ec_Compatibility_Memory</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Compatibility_OutputBuffer.html">Ai1ec_Compatibility_OutputBuffer</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Compatibility_Xguard.html">Ai1ec_Compatibility_Xguard</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Connector_Plugin.html">Ai1ec_Connector_Plugin</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Constants_Not_Set_Exception.html">Ai1ec_Constants_Not_Set_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Content_Filters.html">Ai1ec_Content_Filters</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Controller_Calendar_Feeds.html">Ai1ec_Controller_Calendar_Feeds</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Controller_Content_Filter.html">Ai1ec_Controller_Content_Filter</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Controller_Javascript_Widget.html">Ai1ec_Controller_Javascript_Widget</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Cookie_Present_Dto.html">Ai1ec_Cookie_Present_Dto</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Cookie_Utility.html">Ai1ec_Cookie_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Css_Admin.html">Ai1ec_Css_Admin</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Css_Frontend.html">Ai1ec_Css_Frontend</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Database_Applicator.html">Ai1ec_Database_Applicator</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Database_Error.html">Ai1ec_Database_Error</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Database_Helper.html">Ai1ec_Database_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Database_Schema_Exception.html">Ai1ec_Database_Schema_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Database_Update_Exception.html">Ai1ec_Database_Update_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_Converter.html">Ai1ec_Date_Converter</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_Date_Time_Zone.html">Ai1ec_Date_Date_Time_Zone</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_Exception.html">Ai1ec_Date_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_System.html">Ai1ec_Date_System</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_Time.html">Ai1ec_Date_Time</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_Timezone.html">Ai1ec_Date_Timezone</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Date_Timezone_Exception.html">Ai1ec_Date_Timezone_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Dbi.html">Ai1ec_Dbi</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Dbi_Utils.html">Ai1ec_Dbi_Utils</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Email_Notification.html">Ai1ec_Email_Notification</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Embeddable.html">Ai1ec_Embeddable</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Engine_Not_Set_Exception.html">Ai1ec_Engine_Not_Set_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Environment_Checks.html">Ai1ec_Environment_Checks</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Error_Exception.html">Ai1ec_Error_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event.html">Ai1ec_Event</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Callback_Abstract.html">Ai1ec_Event_Callback_Abstract</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Callback_Action.html">Ai1ec_Event_Callback_Action</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Callback_Filter.html">Ai1ec_Event_Callback_Filter</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Callback_Shortcode.html">Ai1ec_Event_Callback_Shortcode</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Compatibility.html">Ai1ec_Event_Compatibility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Create_Exception.html">Ai1ec_Event_Create_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Creating.html">Ai1ec_Event_Creating</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Dispatcher.html">Ai1ec_Event_Dispatcher</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Entity.html">Ai1ec_Event_Entity</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Instance.html">Ai1ec_Event_Instance</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Legacy.html">Ai1ec_Event_Legacy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Not_Found_Exception.html">Ai1ec_Event_Not_Found_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Parent.html">Ai1ec_Event_Parent</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Search.html">Ai1ec_Event_Search</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Taxonomy.html">Ai1ec_Event_Taxonomy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Event_Trashing.html">Ai1ec_Event_Trashing</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Exception.html">Ai1ec_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Exception_Handler.html">Ai1ec_Exception_Handler</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Factory_Event.html">Ai1ec_Factory_Event</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Factory_Html.html">Ai1ec_Factory_Html</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Factory_Strategy.html">Ai1ec_Factory_Strategy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Abstract.html">Ai1ec_File_Abstract</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Exception.html">Ai1ec_File_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Image.html">Ai1ec_File_Image</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Less.html">Ai1ec_File_Less</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Not_Found_Exception.html">Ai1ec_File_Not_Found_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Php.html">Ai1ec_File_Php</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_File_Twig.html">Ai1ec_File_Twig</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filesystem_Checker.html">Ai1ec_Filesystem_Checker</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filesystem_Misc.html">Ai1ec_Filesystem_Misc</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Authors.html">Ai1ec_Filter_Authors</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Categories.html">Ai1ec_Filter_Categories</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Int.html">Ai1ec_Filter_Int</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Posts.html">Ai1ec_Filter_Posts</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Posts_By_Instance.html">Ai1ec_Filter_Posts_By_Instance</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Tags.html">Ai1ec_Filter_Tags</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Filter_Taxonomy.html">Ai1ec_Filter_Taxonomy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Frequency_Utility.html">Ai1ec_Frequency_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Front_Controller.html">Ai1ec_Front_Controller</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Element.html">Ai1ec_Html_Element</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Element_Calendar_Page_Selector.html">Ai1ec_Html_Element_Calendar_Page_Selector</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Element_Enabled_Views.html">Ai1ec_Html_Element_Enabled_Views</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Element_Href.html">Ai1ec_Html_Element_Href</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Element_Settings.html">Ai1ec_Html_Element_Settings</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Exception.html">Ai1ec_Html_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Helper.html">Ai1ec_Html_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Custom.html">Ai1ec_Html_Setting_Custom</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Html.html">Ai1ec_Html_Setting_Html</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Input.html">Ai1ec_Html_Setting_Input</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Renderer.html">Ai1ec_Html_Setting_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Select.html">Ai1ec_Html_Setting_Select</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Tags_Categories.html">Ai1ec_Html_Setting_Tags_Categories</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Setting_Textarea.html">Ai1ec_Html_Setting_Textarea</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Html_Settings_Checkbox.html">Ai1ec_Html_Settings_Checkbox</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_HTTP_Encoder.html">Ai1ec_HTTP_Encoder</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Http_Request.html">Ai1ec_Http_Request</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Http_Response_Helper.html">Ai1ec_Http_Response_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Http_Response_Render_Strategy.html">Ai1ec_Http_Response_Render_Strategy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_I18n.html">Ai1ec_I18n</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Ics_Import_Export_Engine.html">Ai1ec_Ics_Import_Export_Engine</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Import_Export_Controller.html">Ai1ec_Import_Export_Controller</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Invalid_Argument_Exception.html">Ai1ec_Invalid_Argument_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Javascript_Controller.html">Ai1ec_Javascript_Controller</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Less_Lessphp.html">Ai1ec_Less_Lessphp</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Less_Variable.html">Ai1ec_Less_Variable</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Less_Variable_Color.html">Ai1ec_Less_Variable_Color</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Less_Variable_Font.html">Ai1ec_Less_Variable_Font</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Less_Variable_Size.html">Ai1ec_Less_Variable_Size</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Loader.html">Ai1ec_Loader</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Localization_Helper.html">Ai1ec_Localization_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Meta.html">Ai1ec_Meta</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Meta_Post.html">Ai1ec_Meta_Post</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Meta_User.html">Ai1ec_Meta_User</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_News_Feed.html">Ai1ec_News_Feed</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Notification.html">Ai1ec_Notification</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Notification_Admin.html">Ai1ec_Notification_Admin</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Option.html">Ai1ec_Option</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Outdated_Addon_Exception.html">Ai1ec_Outdated_Addon_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Parse_Exception.html">Ai1ec_Parse_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Parser_Date.html">Ai1ec_Parser_Date</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Post_Content_Check.html">Ai1ec_Post_Content_Check</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Post_Custom_Type.html">Ai1ec_Post_Custom_Type</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Primitive_Array.html">Ai1ec_Primitive_Array</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Primitive_Int.html">Ai1ec_Primitive_Int</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Query_Helper.html">Ai1ec_Query_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Recurrence_Rule.html">Ai1ec_Recurrence_Rule</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Registry_Application.html">Ai1ec_Registry_Application</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Registry_Object.html">Ai1ec_Registry_Object</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Csv.html">Ai1ec_Render_Strategy_Csv</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Html.html">Ai1ec_Render_Strategy_Html</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Ical.html">Ai1ec_Render_Strategy_Ical</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Json.html">Ai1ec_Render_Strategy_Json</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Jsonp.html">Ai1ec_Render_Strategy_Jsonp</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Redirect.html">Ai1ec_Render_Strategy_Redirect</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Void.html">Ai1ec_Render_Strategy_Void</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Xcal.html">Ai1ec_Render_Strategy_Xcal</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Render_Strategy_Xml.html">Ai1ec_Render_Strategy_Xml</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Request_Parser.html">Ai1ec_Request_Parser</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Request_Redirect.html">Ai1ec_Request_Redirect</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Review.html">Ai1ec_Review</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Rewrite_Helper.html">Ai1ec_Rewrite_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Robots_Helper.html">Ai1ec_Robots_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Router.html">Ai1ec_Router</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Scheduling_Exception.html">Ai1ec_Scheduling_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Scheduling_Utility.html">Ai1ec_Scheduling_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Script_Helper.html">Ai1ec_Script_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Settings.html">Ai1ec_Settings</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Settings_Exception.html">Ai1ec_Settings_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Settings_View.html">Ai1ec_Settings_View</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Shutdown_Controller.html">Ai1ec_Shutdown_Controller</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Size_Converter_Utility.html">Ai1ec_Size_Converter_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Taxonomy.html">Ai1ec_Taxonomy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Template_Link_Helper.html">Ai1ec_Template_Link_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Theme_Compiler.html">Ai1ec_Theme_Compiler</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Theme_List.html">Ai1ec_Theme_List</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Theme_Loader.html">Ai1ec_Theme_Loader</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Theme_Search.html">Ai1ec_Theme_Search</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Time_I18n_Utility.html">Ai1ec_Time_I18n_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Time_Utility.html">Ai1ec_Time_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Twig_Ai1ec_Extension.html">Ai1ec_Twig_Ai1ec_Extension</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Twig_Environment.html">Ai1ec_Twig_Environment</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Twig_Loader_Filesystem.html">Ai1ec_Twig_Loader_Filesystem</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Upload_Size_Determiner_Utility.html">Ai1ec_Upload_Size_Determiner_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Uri.html">Ai1ec_Uri</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Validation_Utility.html">Ai1ec_Validation_Utility</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Validator.html">Ai1ec_Validator</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Validator_Email.html">Ai1ec_Validator_Email</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Validator_Human_Readable_Size.html">Ai1ec_Validator_Human_Readable_Size</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Validator_Numeric_Or_Default.html">Ai1ec_Validator_Numeric_Or_Default</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Value_Not_Valid_Exception.html">Ai1ec_Value_Not_Valid_Exception</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Add_New_Event.html">Ai1ec_View_Add_New_Event</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Add_Ons.html">Ai1ec_View_Add_Ons</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Abstract.html">Ai1ec_View_Admin_Abstract</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_All_Events.html">Ai1ec_View_Admin_All_Events</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_EventCategory.html">Ai1ec_View_Admin_EventCategory</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Get_repeat_Box.html">Ai1ec_View_Admin_Get_repeat_Box</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Get_Tax_Box.html">Ai1ec_View_Admin_Get_Tax_Box</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Navigation.html">Ai1ec_View_Admin_Navigation</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Settings.html">Ai1ec_View_Admin_Settings</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Theme_Switching.html">Ai1ec_View_Admin_Theme_Switching</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Admin_Widget.html">Ai1ec_View_Admin_Widget</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Calendar_Feeds.html">Ai1ec_View_Calendar_Feeds</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Calendar_Shortcode.html">Ai1ec_View_Calendar_Shortcode</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Calendar_SubscribeButton.html">Ai1ec_View_Calendar_SubscribeButton</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Calendar_Taxonomy.html">Ai1ec_View_Calendar_Taxonomy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Avatar.html">Ai1ec_View_Event_Avatar</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Color.html">Ai1ec_View_Event_Color</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Content.html">Ai1ec_View_Event_Content</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Location.html">Ai1ec_View_Event_Location</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Post.html">Ai1ec_View_Event_Post</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Single.html">Ai1ec_View_Event_Single</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Taxonomy.html">Ai1ec_View_Event_Taxonomy</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Ticket.html">Ai1ec_View_Event_Ticket</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Event_Time.html">Ai1ec_View_Event_Time</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Organize.html">Ai1ec_View_Organize</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Samples.html">Ai1ec_View_Samples</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Theme_Options.html">Ai1ec_View_Theme_Options</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Tickets.html">Ai1ec_View_Tickets</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_View_Widget_Creator.html">Ai1ec_View_Widget_Creator</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_Wp_Uri_Helper.html">Ai1ec_Wp_Uri_Helper</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ec_XML_Builder.html">Ai1ec_XML_Builder</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ecdm_Datetime_Migration.html">Ai1ecdm_Datetime_Migration</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ecIcsConnectorPlugin.html">Ai1ecIcsConnectorPlugin</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ecImportConnectorPlugin.html">Ai1ecImportConnectorPlugin</a></li>
+                                                    <li class="class"><a href="../classes/Ai1ecSuggestedConnectorPlugin.html">Ai1ecSuggestedConnectorPlugin</a></li>
+                                                    <li class="class"><a href="../classes/iCalcnv.html">iCalcnv</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal.html">SG_iCal</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Duration.html">SG_iCal_Duration</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Factory.html">SG_iCal_Factory</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Freq.html">SG_iCal_Freq</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Line.html">SG_iCal_Line</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Parser.html">SG_iCal_Parser</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Query.html">SG_iCal_Query</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_Recurrence.html">SG_iCal_Recurrence</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_VCalendar.html">SG_iCal_VCalendar</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_VEvent.html">SG_iCal_VEvent</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCal_VTimeZone.html">SG_iCal_VTimeZone</a></li>
+                                                    <li class="class"><a href="../classes/SG_iCalReader.html">SG_iCalReader</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content file">
+                    <nav>
+                                                                    </nav>
+
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+                    <h1><small>lib/iCal/iCalcreator-2.26.9/src/Traits</small>REQUEST_STATUStrait.php</h1>
+                    <p><em>iCalcreator, the PHP class package managing iCal (rfc2445/rfc5445) calendar information.</em></p>
+                    <p>copyright (c) 2007-2019 Kjell-Inge Gustafsson, kigkonsult, All rights reserved
+Link      <a href="https://kigkonsult.se">https://kigkonsult.se</a>
+Package   iCalcreator
+Version   2.26.8
+License   Subject matter of licence is the software iCalcreator.
+The above copyright, link, package and version notices,
+this licence notice and the invariant [rfc5545] PRODID result use
+as implemented and invoked in iCalcreator shall be included in
+all copies or substantial portions of the iCalcreator.</p>
+<pre><code>      iCalcreator is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published
+      by the Free Software Foundation, either version 3 of the License,
+      or (at your option) any later version.
+
+      iCalcreator is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with iCalcreator. If not, see &lt;https://www.gnu.org/licenses/&gt;.</code></pre>
+<p>This file is a part of iCalcreator.</p>
+
+                                        <h2>Traits</h2>
+                    <table class="table table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Kigkonsult.Icalcreator.Traits.REQUEST_STATUStrait.html">REQUEST_STATUStrait</a></td>
+                                <td><em>REQUEST-STATUS property functions</em></td>
+                            </tr>
+                                            </table>
+                    
+                    
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                                                    <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\Default</div></dd>
+                        
+                        
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                                            </table>
+
+                </aside>
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label"></h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/lib/iCal/iCalcreator-2.26.9/src/Traits/REQUEST_STATUStrait.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Kigkonsult.html">\Kigkonsult</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on June 30th, 2020 at 16:02.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
